@@ -6,11 +6,15 @@ def subtract(a: float, b: float) -> float:
     return a - b
 
 
+def multiply(a: float, b: float) -> float:
+    return a * b
+
+
 def main() -> None:
-    print("Simple calculator: add and subtract")
+    print("Simple calculator: add, subtract, and multiply")
     try:
         a = float(input("Enter first number: "))
-        op = input("Enter operation (+ or -): ").strip()
+        op = input("Enter operation (+, -, or *): ").strip()
         b = float(input("Enter second number: "))
     except ValueError:
         print("Invalid number.")
@@ -20,6 +24,8 @@ def main() -> None:
         result = add(a, b)
     elif op == "-":
         result = subtract(a, b)
+    elif op == "*":
+        result = multiply(a, b)
     else:
         print(f"Unsupported operation: {op}")
         return
