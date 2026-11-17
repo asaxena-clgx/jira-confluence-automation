@@ -30,10 +30,7 @@ Add a check to the DB migration QA tool using the `Check` interface from backlog
   + `CheckResult` fields: `status`, `details` (JSON with counts and object names), `evidence_ref` (reference, not values), `check_id`, `created_at`.
   + Details contain counts, hashes, object names, and differences by category only.
 - **Constraints**
-  + Never store or print row-level values in details or reports (NFR-4).
-  + Never write to any database (FR-3.1, NFR-1).
+  + Apply the shared guardrails in `./instructions/enforce-qa-guardrails.agent.md`.
   + Do not hard-code thresholds; read them from configuration (FR-4.9).
   + Do not modify the run engine or other checks when adding this check (NFR-10).
   + Use the same `CheckResult` model as existing checks; do not add fields for one check only.
-  + Do not add a check that duplicates an existing one; extend the existing check's configuration instead.
-  + Update the user documentation for checks (backlog task 5.1) with the new check's name, inputs, and thresholds.

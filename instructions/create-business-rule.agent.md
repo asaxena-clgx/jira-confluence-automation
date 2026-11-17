@@ -25,9 +25,7 @@ Create a business-rule assertion for the DB migration QA tool (FR-4.5, backlog t
   + Stored rule record: `id`, `name`, `sql`, `expected_result`, `owner_id`, `version`.
   + Run result per rule: pass or fail, the rule ID and version used, and the row count returned (count only, never row values).
 - **Constraints**
-  + The SQL must not contain DDL, DML, or session-changing statements (FR-3.1, NFR-1).
-  + Run rules only through the read-only connector.
-  + Do not include row-level values in the rule result or report (NFR-4).
+  + Apply the shared guardrails in `./instructions/enforce-qa-guardrails.agent.md`.
+  + The SQL must be a single `SELECT` or `WITH ... SELECT` statement; reject all others.
   + Every run records the rule version it used.
-  + Do not store credentials or connection strings in the rule file.
   + Do not change the rule's owner without approval from the existing owner.

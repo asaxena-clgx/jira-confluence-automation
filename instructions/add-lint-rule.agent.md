@@ -26,7 +26,5 @@ Add a rule to the script linter from backlog task 2.8 (FR-2.1, FR-2.2, FR-2.4).
 - **Constraints**
   + Rule IDs are unique and never reused after a rule is removed.
   + Each rule has exactly one severity.
-  + The linter only reads scripts. It never executes them (FR-3.1).
-  + Do not put database credentials or connection strings in rule files or samples.
-  + Keep samples minimal: only the construct under test, no real migration data.
-  + Do not add a rule that duplicates an existing rule's construct; update the existing rule instead.
+  + Apply the shared guardrails in `./instructions/enforce-qa-guardrails.agent.md`.
+  + Samples contain only the construct under test.

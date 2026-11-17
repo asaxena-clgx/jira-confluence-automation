@@ -19,3 +19,5 @@ Each entry below is an instruction file with a one-line description. Optional su
   + Target: linter rules folder
 - [`./create-business-rule.agent.md`](./create-business-rule.agent.md) — Creates a versioned business-rule assertion (SQL that must return zero rows or a defined result).
   + Keywords: business rule, create rule, assertion, SQL rule, data rule
+- [`./enforce-qa-guardrails.agent.md`](./enforce-qa-guardrails.agent.md) — Shared read-only, data-handling, and documentation rules referenced by the check, lint rule, and business rule instructions.
+  + Keywords: guardrails, read-only, data safety, shared rules, QA safety
