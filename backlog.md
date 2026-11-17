@@ -37,28 +37,28 @@ Note: 2.11 flagging (Warning or Fail) is already covered by the repo's `use-quer
 - [x] Confirm Python 3.12+ stack with FastAPI, Typer, and PostgreSQL metadata store (owner confirmed; spec Section 9, assumption 1) — **custom skill**
 - [x] Create the project repository (already done in this repo) — **custom skill**
 - [x] Set up the development environment (`.venv`, pinned `requirements-dev.txt`) (already done) — **custom skill**
-- [ ] Add runtime dependencies to a pinned manifest: `python-oracledb`, `psycopg`, `fastapi`, `typer`, `jinja2`, `weasyprint`, `pytest` — **custom skill**
-- [ ] Choose and document the package layout for the tool (for example, `qa_tool/` package) alongside the existing `status_report.py` — **custom skill**
+- [ ] Add runtime dependencies to a pinned manifest: `python-oracledb`, `psycopg`, `fastapi`, `typer`, `jinja2`, `weasyprint`, `pytest` — **custom skill** — issue #20
+- [ ] Choose and document the package layout for the tool (for example, `qa_tool/` package) alongside the existing `status_report.py` — **custom skill** — issue #21
 
 ### 1.2 Repository and CI Basics
-- [ ] Confirm `.gitignore` covers `.env`, secrets files, `reports/*.pdf`, and any local evidence output (NFR-2) — **custom skill**
-- [ ] Add a pytest configuration (`pytest.ini` or `pyproject.toml`) with separate markers for unit, integration, and sandbox tests — **custom skill**
-- [ ] Add a lint and type-check configuration (ruff and mypy or pyright) — **MCP** (Pylance MCP: `pylanceSettings`, `pylanceAnalyze`)
-- [ ] Add a CI workflow that runs lint, type check, and unit tests on every push (manual triggers only for runs; CI here is for the tool's own code, not for migration runs) — **MCP** (GitHub MCP: `create_or_update_file`, `actions_list`, `get_job_logs`)
+- [ ] Confirm `.gitignore` covers `.env`, secrets files, `reports/*.pdf`, and any local evidence output (NFR-2) — **custom skill** — issue #22
+- [ ] Add a pytest configuration (`pytest.ini` or `pyproject.toml`) with separate markers for unit, integration, and sandbox tests — **custom skill** — issue #23
+- [ ] Add a lint and type-check configuration (ruff and mypy or pyright) — **MCP** (Pylance MCP: `pylanceSettings`, `pylanceAnalyze`) — issue #24
+- [ ] Add a CI workflow that runs lint, type check, and unit tests on every push (manual triggers only for runs; CI here is for the tool's own code, not for migration runs) — **MCP** (GitHub MCP: `create_or_update_file`, `actions_list`, `get_job_logs`) — issue #25
 
 ### 1.3 Environment Profiles and Accounts
-- [ ] Define the `Environment` profile schema: id, name, type (`source`, `target`, `sandbox`, `lower_env`), connection_ref, `is_production` (FR-1.1) — **custom skill**
-- [ ] Create a profile template file that holds no secrets (for example, `profiles.example.toml`) (FR-1.4) — **custom skill**
-- [ ] Request read-only Oracle service account for source (FR-1.2, spec Assumption 6) — **custom skill**
-- [ ] Request read-only PostgreSQL service account for target (FR-1.2, spec Assumption 6) — **custom skill**
-- [ ] Request PostgreSQL sandbox account with write access, on a separate network path from production (FR-1.3, NFR-1) — **custom skill**
-- [ ] Confirm whether a sandbox that mirrors the target schema already exists (spec Open Question 4) — **custom skill**
+- [ ] Define the `Environment` profile schema: id, name, type (`source`, `target`, `sandbox`, `lower_env`), connection_ref, `is_production` (FR-1.1) — **custom skill** — issue #26
+- [ ] Create a profile template file that holds no secrets (for example, `profiles.example.toml`) (FR-1.4) — **custom skill** — issue #27
+- [ ] Request read-only Oracle service account for source (FR-1.2, spec Assumption 6) — **custom skill** — issue #28
+- [ ] Request read-only PostgreSQL service account for target (FR-1.2, spec Assumption 6) — **custom skill** — issue #29
+- [ ] Request PostgreSQL sandbox account with write access, on a separate network path from production (FR-1.3, NFR-1) — **custom skill** — issue #30
+- [ ] Confirm whether a sandbox that mirrors the target schema already exists (spec Open Question 4) — **custom skill** — issue #31
 
 ### 1.4 Data Volume Measurement
-- [ ] Query source Oracle for row counts and sizes of every table in scope (spec Open Question 1) — **MCP** (SQLcl: `sql_run`)
-- [ ] Record results in a table with table name, row count, size, and largest-table flag — **custom skill**
-- [ ] Agree on the NFR-5 full row-count window with the team using these measurements — **custom skill**
-- [ ] Decide whether the sampling question (spec Section 2.2) needs a re-check before the pilot — **custom skill**
+- [ ] Query source Oracle for row counts and sizes of every table in scope (spec Open Question 1) — **MCP** (SQLcl: `sql_run`) — issue #32
+- [ ] Record results in a table with table name, row count, size, and largest-table flag — **custom skill** — issue #33
+- [ ] Agree on the NFR-5 full row-count window with the team using these measurements — **custom skill** — issue #34
+- [ ] Decide whether the sampling question (spec Section 2.2) needs a re-check before the pilot — **custom skill** — issue #35
 
 ---
 
